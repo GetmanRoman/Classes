@@ -1,1 +1,11 @@
-﻿Console.WriteLine("Hello, World!");
+﻿using _6._Classes;
+
+// Проверка на норм работу
+Book WarAndPeace = new Book("Война и мир", "Толстой", 1869); 
+WarAndPeace.BookInfo();
+
+Console.WriteLine();
+
+// Проверка пустого конструктора
+Book emptyBook = new Book(); 
+emptyBook.BookInfo();

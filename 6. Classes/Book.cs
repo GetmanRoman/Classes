@@ -5,14 +5,15 @@ public class Book
     private string Title; // Название
     private string Author; // Автор
     private int Year; // Год создания книги
-    private bool IsAvaliable; // Доступна ли к продаже
-
+    private bool IsAvailable; // Доступна ли к продаже
+    
     public Book()
     {
-        Title = "";
-        Author = "";
-        Year = 0;
-        IsAvaliable = false;
+        Console.WriteLine("Параметры не заполнены");
+        Title = "Не записано";
+        Author = "Не записан";
+        Year = 0; 
+        IsAvailable = false;
     }
     
     public Book(string title, string author, int year)
@@ -20,6 +21,14 @@ public class Book
         Title = title;
         Author = author;
         Year = year;
-        IsAvaliable = true;
+        IsAvailable = true;
+    }
+
+    public void BookInfo()
+    {
+        Console.WriteLine($"Название книги: {Title}");
+        Console.WriteLine($"Автор: {Author}");
+        Console.WriteLine($"Год написания книги: {Year}");
+        Console.WriteLine($"Наличие в продаже: {(IsAvailable ? "есть" : "нет")}");
     }
 }
