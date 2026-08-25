@@ -2,33 +2,39 @@
 
 public class Book
 {
-    private string Title; // Название
-    private string Author; // Автор
-    private int Year; // Год создания книги
-    private bool IsAvailable; // Доступна ли к продаже
+    // Стоит писать с маленькой буквы
+    private string title; // Название
+    private string author; // Автор
+    private int year; // Год создания книги
+    private bool isAvailable; // Доступна ли к продаже
     
-    public Book()
+    // Создали 1 идеальный конструктор, который и записывает, и работает, если не записали
+    public Book(
+        string title = "Не записано",
+        string author = "Не записан",
+        int year = 0,
+        bool isAvailable = false)
     {
-        Console.WriteLine("Параметры не заполнены");
-        Title = "Не записано";
-        Author = "Не записан";
-        Year = 0; 
-        IsAvailable = false;
+        this.title = title;
+        this.author = author;
+        this.year = year;
+        this.isAvailable = isAvailable;
     }
     
-    public Book(string title, string author, int year)
-    {
-        Title = title;
-        Author = author;
-        Year = year;
-        IsAvailable = true;
-    }
+    // Оказывается устаревшее
+    // public Book(string Title, string Author, int Year)
+    // {
+    //     this.Title = Title;
+    //     this.Author = Author;
+    //     this.Year = Year;
+    //     IsAvailable = true;
+    // }
 
     public void BookInfo()
     {
-        Console.WriteLine($"Название книги: {Title}");
-        Console.WriteLine($"Автор: {Author}");
-        Console.WriteLine($"Год написания книги: {Year}");
-        Console.WriteLine($"Наличие в продаже: {(IsAvailable ? "есть" : "нет")}");
+        Console.WriteLine($"Название книги: {title}");
+        Console.WriteLine($"Автор: {author}");
+        Console.WriteLine($"Год написания книги: {year}");
+        Console.WriteLine($"Наличие в продаже: {(isAvailable ? "есть" : "нет")}");
     }
 }
