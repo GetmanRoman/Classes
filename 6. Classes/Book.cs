@@ -1,12 +1,12 @@
-﻿namespace _6._Classes;
+﻿namespace ClassBook;
 
 public class Book
 {
     // Стоит писать с маленькой буквы
-    private string title; // Название
-    private string author; // Автор
-    private int year; // Год создания книги
-    private bool isAvailable; // Доступна ли к продаже
+    public string title; // Название
+    public string author; // Автор
+    public int year; // Год создания книги
+    public bool isAvailable; // Доступна ли к продаже
     
     // Создали 1 идеальный конструктор, который и записывает, и работает, если не записали
     public Book(
@@ -21,20 +21,28 @@ public class Book
         this.isAvailable = isAvailable;
     }
     
-    // Оказывается устаревшее
-    // public Book(string Title, string Author, int Year)
-    // {
-    //     this.Title = Title;
-    //     this.Author = Author;
-    //     this.Year = Year;
-    //     IsAvailable = true;
-    // }
-
-    public void BookInfo()
+public void BookInfo()
     {
         Console.WriteLine($"Название книги: {title}");
         Console.WriteLine($"Автор: {author}");
         Console.WriteLine($"Год написания книги: {year}");
         Console.WriteLine($"Наличие в продаже: {(isAvailable ? "есть" : "нет")}");
     }
+}
+
+// Класс расширитель
+public static class BookHelper 
+{ 
+    public static void Print(this Book book) // Объект основного класса
+    { 
+        Console.WriteLine($"Книга: {book.title}, Автор: {book.author}"); 
+    } 
+    
+    public static void CreateDefault(this Book book) // Объект основного класса
+    {
+        string title = "Не записано";
+        string author = "Не записан";
+        int year = 0;
+        bool isAvailable = false;
+    } 
 }
