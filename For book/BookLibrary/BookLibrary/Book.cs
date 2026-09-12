@@ -1,4 +1,4 @@
-﻿namespace ClassBook;
+﻿namespace BookLibrary;
 
 public class Book
 {
@@ -21,7 +21,7 @@ public class Book
         this.isAvailable = isAvailable;
     }
     
-public void BookInfo()
+    public void BookInfo()
     {
         Console.WriteLine($"Название книги: {title}");
         Console.WriteLine($"Автор: {author}");

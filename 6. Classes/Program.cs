@@ -9,3 +9,5 @@ Console.WriteLine();
 // Проверка пустого конструктора
 Book emptyBook = new Book(); 
 emptyBook.BookInfo();
+
+Console.ReadKey();
